@@ -1,8 +1,13 @@
+import Hero from '@/components/Hero'
 import React from 'react'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+      <Hero />
+      <div className='h-[8000px]'>
+      </div>
+    </>
   )
 }
 
