@@ -1,6 +1,8 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
+import Header from "./Header";
+import Button from "./Button";
 
 
 
@@ -22,6 +24,7 @@ const Hero = () => {
 
   return (
     <section className="h-screen xl:h-[1600px] overflow-x-clip relative">
+      <Header />
       <div className="container mx-auto h-full flex items-center xl:items-start">
         {/* text */}
         <motion.div 
@@ -29,6 +32,7 @@ const Hero = () => {
           style={{
             opacity: textOpacity,
             scale: textScale,
+            display: textDisplay
           }}
         >
           <h1 className="text-[60px] font-bold tracking-[-0.5px] leading-none max-w-[800px] xl:max-w-max">
@@ -37,7 +41,7 @@ const Hero = () => {
           <p className="max-w-[680px] text-[20px] text-white/80 font-light px-8 xl:px-0 mb-2">
             Streamline task and manage your time effortlessly with our powerful, intuitive, all in one productivity platform.
           </p>
-          <button>Join today</button>
+          <Button />
         </motion.div>
         <motion.div 
           className="hidden xl:flex w-full max-w-[960px] mx-auto h-[520px] bg-no-repeat sticky left-0 right-0"
@@ -46,7 +50,8 @@ const Hero = () => {
             backgroundSize: "contain",
             backgroundPosition: "center",
             top: imgTopPosition,
-            scale: imgScale
+            scale: imgScale,
+            
           }}
         ></motion.div>
       </div>

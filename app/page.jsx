@@ -1,12 +1,17 @@
-import Hero from '@/components/Hero'
+"use client"
+
 import React from 'react'
+import Hero from '@/components/Hero'
+
+import { ReactLenis } from 'lenis/dist/lenis-react'
 
 const Home = () => {
   return (
     <>
-      <Hero />
-      <div className='h-[8000px]'>
-      </div>
+      <ReactLenis root>
+        <Hero />
+        <div className='h-[8000px]'></div>
+      </ReactLenis>
     </>
   )
 }
