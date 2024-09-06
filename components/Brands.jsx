@@ -1,5 +1,6 @@
 "use client"
 
+import { fadeInOnScroll } from "@/motion/motionVariants"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
@@ -37,7 +38,12 @@ const brandsImage = [
 const Brands = () => {
   return (
     <section className="w-full h-[24vh] pt-24 flex justify-center items-center">
-      <div className="container mx-auto overflow-hidden">
+      <motion.div 
+        variants={fadeInOnScroll(0.2, 0.6)}
+        initial="hidden"
+        whileInView="visible"
+        className="container mx-auto overflow-hidden"
+      >
         <div className="flex">
           <motion.div
             initial={{ x: 0 }}
@@ -76,7 +82,7 @@ const Brands = () => {
             })}
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
