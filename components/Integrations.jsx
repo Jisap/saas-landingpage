@@ -45,7 +45,7 @@ const icons = [
     src: "/integrations/discord.svg"
   },
   {
-    src: "/integrations/bitbucked.svg"
+    src: "/integrations/bitbucket.svg"
   },
   {
     src: "/integrations/invision.svg"  
@@ -53,12 +53,59 @@ const icons = [
   {
     src: "/integrations/evernote.svg"
   },
-]
+];
+
+const iconAnimation ={
+  initial: {
+    opacity: 0,
+    y: 60
+  },
+  animate: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.05 * index
+    }
+  })
+}
 
 const Integrations = () => {
   return (
     <section className='py-24 xl:py-32 min-h-[720px] xl:mt-32'>
-      
+      <div className="container mx-auto flex flex-col items-center justify-center gap-8 xl:gap-16">
+        {/* text */}
+        <div className="text-center">
+          <h2 className="h2 mb-3">Unified Workflows</h2>
+          <p className="lead">
+            Integrate with tops apps to create a seamless, connected experience.
+          </p>
+        </div>
+        {/* icon list */}
+        <div className="flex flex-wrap gap-8 w-full max-w-[1024px] mx-auto place-content-center mb-8">
+          {icons.map((icon, index) => {
+            return (
+              <motion.div 
+                className="relative w-[80px] h-[80px]" 
+                key={index}
+                custom={index}  
+                variants={iconAnimation}
+                initial="initial"
+                whileInView="animate"
+              >
+                <Image 
+                  src={icon.src}
+                  fill
+                  alt=""
+                />
+              </motion.div>
+            )
+          })}
+        </div>
+        {/* btn */}
+        <div>
+          <Button btnText="See all" />
+        </div>
+      </div>
     </section>
   )
 }
