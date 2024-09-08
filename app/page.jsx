@@ -7,6 +7,7 @@ import { ReactLenis } from 'lenis/dist/lenis-react'
 import Brands from '@/components/Brands'
 import Features from '@/components/Features'
 import Integrations from '@/components/Integrations'
+import Testimonial from '@/components/Testimonial'
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <Brands />
         <Features />
         <Integrations />
+        <Testimonial />
         <div className='h-[8000px]'></div>
       </ReactLenis>
     </>
