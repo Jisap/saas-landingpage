@@ -13,7 +13,7 @@ const testimonial = [
   },
   {
     name: "Bob Smith",
-    message: "I was blown away by the quality of work and the level of support provided by this company. They truly went above and beyond to make my experience as smooth and enjoyable as possible.",
+    message: "I was blown away by the quality of work and the level of support provided by this company.",
   },
   {
     name: "Mark Brown",
@@ -41,7 +41,15 @@ const Testimonial = () => {
             <div>
               {testimonial.map((item, index) => {
                 return (
-                  <div>card</div>
+                  <div key={index} className="relative w-[460px] h-[300px] bg-[#0e11354e] mr-12 rounded-2xl flex flex-col justify-center px-14">
+                    <BiSolidQuoteLeft className="text-accent mb-3 text-3xl" />
+                    <p>
+                      {item.message}
+                    </p>
+                    <p>
+                      {item.name}
+                    </p>
+                  </div>
                 )
               })}
             </div>
