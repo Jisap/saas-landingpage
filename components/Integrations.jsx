@@ -110,9 +110,15 @@ const Integrations = () => {
         </div>
         {/* btn */}
         <motion.div
-          variants={fadeInSpring(0.6, 0.8)}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ y: 60, opacity: 0, scale: 0.8 }}
+          whileInView={{ y: 0, opacity: 1, scale: 1 }}
+          transition={{ 
+            delay: 0.6, 
+            duration: 0.4, 
+            ease: [0.6, -0.05, 0.01, 0.99],
+            type: "spring",
+            stiffness:100,  
+          }}
         >
           <Button btnText="See all" />
         </motion.div>
