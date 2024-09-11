@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Logo from "./Logo"
+import Image from "next/image"
 
 
 const icons = [
@@ -37,13 +38,35 @@ const icons = [
 const Footer = () => {
   return (
     <footer className="bg-[#10112f] py-24">
-      <div>
-        {/* Socials */}
-        <div></div>
-        {/* logo */}
-        <Logo />
-        {/* Copyright */}
-        <p>&copy;</p>
+      <div className="container mx-auto">
+        <div className="flex flex-col xl:flex-row items-center gap-12 xl:justify-between">
+          {/* Socials */}
+          <div className="flex-1 flex gap-8">
+            {icons.map((icon, index) => {
+              return (
+                <Link
+                  href={icon.href}
+                  key={index}
+                >
+                  <div className="relative w-6 h-6">
+                    <Image 
+                      src={icon.src}
+                      alt="social"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+          {/* logo */}
+          <div className="flex-1">
+            <Logo />
+          </div>
+          {/* Copyright */}
+          <p className="flex-1">&copy; 2024 Focus. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   )
