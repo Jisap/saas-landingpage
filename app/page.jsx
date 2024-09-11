@@ -22,7 +22,7 @@ const Home = () => {
         <Testimonial />
         <Trial />
         <Footer />
-        <div className='h-[8000px]'></div>
+        {/* <div className='h-[8000px]'></div> */}
       </ReactLenis>
     </>
   )
