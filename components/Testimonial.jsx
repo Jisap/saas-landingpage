@@ -31,7 +31,7 @@ const testimonial = [
 
 const Testimonial = () => {
   return (
-    <section className="w-full xl:py-24 mb-24 xl:mb-32 flex justify-center items-center">
+    <section className="w-full mb-24 xl:mb-32 flex justify-center items-center">
       <div className="overflow-hidden">
         {/* text */}
         <motion.div
